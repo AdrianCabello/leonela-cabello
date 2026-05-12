@@ -12,6 +12,37 @@ const browserDistFolder = join(import.meta.dirname, '../browser');
 const app = express();
 const angularApp = new AngularNodeAppEngine();
 
+app.set('trust proxy', true);
+
+function getRequestOrigin(req: express.Request): string {
+  const forwardedProtocol = req.get('x-forwarded-proto')?.split(',')[0]?.trim();
+  const protocol = forwardedProtocol || req.protocol;
+
+  return `${protocol}://${req.get('host')}`;
+}
+
+async function injectRequestOrigin(
+  response: Response,
+  req: express.Request,
+): Promise<Response> {
+  const contentType = response.headers.get('content-type') || '';
+
+  if (!contentType.includes('text/html')) {
+    return response;
+  }
+
+  const html = await response.text();
+  const body = html.replaceAll('__SITE_URL__', getRequestOrigin(req));
+  const headers = new Headers(response.headers);
+  headers.set('content-length', Buffer.byteLength(body).toString());
+
+  return new Response(body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
+}
+
 /**
  * Example Express Rest API endpoints can be defined here.
  * Uncomment and define endpoints as necessary.
@@ -41,9 +72,14 @@ app.use(
 app.use((req, res, next) => {
   angularApp
     .handle(req)
-    .then((response) =>
-      response ? writeResponseToNodeResponse(response, res) : next(),
-    )
+    .then(async (response) => {
+      if (!response) {
+        next();
+        return;
+      }
+
+      writeResponseToNodeResponse(await injectRequestOrigin(response, req), res);
+    })
     .catch(next);
 });
 

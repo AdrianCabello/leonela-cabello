@@ -117,6 +117,11 @@ main {
   overflow: hidden;
 }
 
+main,
+section[id] {
+  scroll-margin-top: 88px;
+}
+
 .section-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
@@ -455,6 +460,10 @@ p {
     grid-template-columns: 1fr;
   }
 
+  .about {
+    background: #fff;
+  }
+
   .hero {
     min-height: auto;
   }
@@ -498,6 +507,12 @@ p {
 
   .summit-gallery {
     grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+
+  .summit-gallery img,
+  .summit-gallery .featured {
+    height: auto;
   }
 
   .summit-gallery .featured {
