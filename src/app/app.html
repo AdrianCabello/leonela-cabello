@@ -9,7 +9,7 @@
 
   <nav aria-label="Navegación principal">
     <a href="#servicios">Servicios</a>
-    <a href="#sobre-mi">Sobre mi</a>
+    <a href="#sobre-mi">Sobre mí</a>
     <a href="#worksummit">WorkSummit</a>
     <a href="#contacto">Contacto</a>
   </nav>
@@ -32,12 +32,15 @@
         <a class="button primary" [href]="whatsappUrl" target="_blank" rel="noopener">
           Consultar por WhatsApp
         </a>
+        <a class="button secondary" [href]="calendlyUrl" target="_blank" rel="noopener">
+          Agendar consulta
+        </a>
         <a class="button secondary" href="#servicios">Ver servicios</a>
       </div>
       <ul class="trust-list" aria-label="Valores del estudio">
         <li>Atención personalizada</li>
         <li>Confidencialidad</li>
-        <li>Mirada estrategica</li>
+        <li>Mirada estratégica</li>
       </ul>
     </div>
 
@@ -52,7 +55,7 @@
 
   <section class="services" id="servicios" aria-labelledby="services-title">
     <div class="section-heading">
-      <h2 id="services-title">En que puedo ayudarte</h2>
+      <h2 id="services-title">En qué puedo ayudarte</h2>
       <p>
         Un primer contacto ordenado permite definir prioridades, riesgos y el
         camino legal más conveniente para tu caso.
@@ -81,7 +84,7 @@
       />
     </div>
     <div class="about-copy">
-      <h2 id="about-title">Sobre mi</h2>
+      <h2 id="about-title">Sobre mí</h2>
       <p>
         Soy <strong>Leonela Cabello</strong>, abogada con una mirada humana y
         práctica del derecho. Mi trabajo combina escucha, claridad y estrategia
@@ -148,6 +151,9 @@
     <div class="contact-actions">
       <a class="button primary" [href]="whatsappUrl" target="_blank" rel="noopener">
         Consultar por WhatsApp
+      </a>
+      <a class="button calendly" [href]="calendlyUrl" target="_blank" rel="noopener">
+        Agendar por Calendly
       </a>
       <a [href]="instagramUrl" target="_blank" rel="noopener">@legalcloser</a>
       <a [href]="linkedinUrl" target="_blank" rel="noopener">LinkedIn</a>

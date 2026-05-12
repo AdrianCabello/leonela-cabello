@@ -19,6 +19,7 @@ type SummitImage = {
 })
 export class App {
   protected readonly whatsappUrl = 'https://wa.me/message/EANVLTVFIU6PK1';
+  protected readonly calendlyUrl = 'https://calendly.com/legalcloser/consulta';
   protected readonly instagramUrl = 'https://www.instagram.com/legalcloser/';
   protected readonly linkedinUrl = 'https://www.linkedin.com/in/leonela-cabello/';
 
@@ -44,7 +45,7 @@ export class App {
       icon: 'M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z M16 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z M3 21a5 5 0 0 1 10 0 M11 21a5 5 0 0 1 10 0',
     },
     {
-      title: 'Accidentes de transito',
+      title: 'Accidentes de tránsito',
       text: 'Gestión de reclamos e indemnizaciones con foco en defender tus derechos.',
       icon: 'M5 16h14l-2-6H7l-2 6z M7 16v3 M17 16v3 M8 19h.01 M16 19h.01 M3 13h3 M18 13h3',
     },
