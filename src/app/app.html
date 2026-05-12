@@ -1,0 +1,156 @@
+<header class="site-header">
+  <a class="brand" href="#inicio" aria-label="Leonela Cabello inicio">
+    <span class="brand-mark">LC</span>
+    <span>
+      <strong>Leonela Cabello</strong>
+      <small>ABOGADA</small>
+    </span>
+  </a>
+
+  <nav aria-label="Navegación principal">
+    <a href="#servicios">Servicios</a>
+    <a href="#sobre-mi">Sobre mi</a>
+    <a href="#worksummit">WorkSummit</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <a class="header-cta" [href]="whatsappUrl" target="_blank" rel="noopener">
+    <span aria-hidden="true">WhatsApp</span>
+    Consultar
+  </a>
+</header>
+
+<main id="inicio">
+  <section class="hero section-grid">
+    <div class="hero-copy">
+      <h1>Soluciones legales claras para decisiones importantes</h1>
+      <p>
+        Acompaño a personas, emprendedores y empresas con asesoramiento
+        práctico, cercano y estratégico en cada etapa.
+      </p>
+      <div class="hero-actions">
+        <a class="button primary" [href]="whatsappUrl" target="_blank" rel="noopener">
+          Consultar por WhatsApp
+        </a>
+        <a class="button secondary" href="#servicios">Ver servicios</a>
+      </div>
+      <ul class="trust-list" aria-label="Valores del estudio">
+        <li>Atención personalizada</li>
+        <li>Confidencialidad</li>
+        <li>Mirada estrategica</li>
+      </ul>
+    </div>
+
+    <div class="hero-media">
+      <img
+        src="/assets/images/leonela-podcast.webp"
+        alt="Leonela Cabello en su espacio de trabajo"
+        fetchpriority="high"
+      />
+    </div>
+  </section>
+
+  <section class="services" id="servicios" aria-labelledby="services-title">
+    <div class="section-heading">
+      <h2 id="services-title">En que puedo ayudarte</h2>
+      <p>
+        Un primer contacto ordenado permite definir prioridades, riesgos y el
+        camino legal más conveniente para tu caso.
+      </p>
+    </div>
+
+    <div class="service-grid">
+      @for (service of services; track service.title) {
+        <article class="service-card">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path [attr.d]="service.icon" />
+          </svg>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.text }}</p>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="about section-grid" id="sobre-mi" aria-labelledby="about-title">
+    <div class="about-media">
+      <img
+        src="/assets/images/leonela-hero.jpg"
+        alt="Retrato profesional de Leonela Cabello"
+        loading="lazy"
+      />
+    </div>
+    <div class="about-copy">
+      <h2 id="about-title">Sobre mi</h2>
+      <p>
+        Soy <strong>Leonela Cabello</strong>, abogada con una mirada humana y
+        práctica del derecho. Mi trabajo combina escucha, claridad y estrategia
+        para que cada persona entienda sus opciones antes de avanzar.
+      </p>
+      <p>
+        También integro experiencia comercial y de negociación como closer de
+        ventas y fundadora en UpHackers, una combinación que ayuda especialmente
+        en contratos, marcas y decisiones legales vinculadas a proyectos.
+      </p>
+      <div class="about-points">
+        <span>Derecho</span>
+        <span>Negociación</span>
+        <span>Comunicación clara</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="summit" id="worksummit" aria-labelledby="summit-title">
+    <div class="summit-copy">
+      <h2 id="summit-title">WorkSummit Mar del Plata 2025</h2>
+      <p>
+        Leonela participó del WorkSummit Mar del Plata 2025, encuentro realizado
+        el 15 de octubre de 2025 en el Centro Cultural Estación Terminal Sur /
+        Paseo Aldrey, enfocado en futuro del trabajo, inteligencia artificial,
+        innovación, empleabilidad y networking profesional.
+      </p>
+      <p>
+        El evento reunió a más de 500 asistentes entre emprendedores,
+        profesionales, startups, empresas tecnológicas y referentes del
+        ecosistema digital, bajo el lema "Impulsando el talento local para
+        transformar Argentina".
+      </p>
+      <div class="summit-tags" aria-label="Temas del evento">
+        <span>IA</span>
+        <span>Empleabilidad</span>
+        <span>Startups</span>
+        <span>Networking</span>
+        <span>Economía del conocimiento</span>
+      </div>
+    </div>
+
+    <div class="summit-gallery">
+      <img
+        class="featured"
+        src="/assets/images/worksummit-facade.jpg"
+        alt="Leonela Cabello frente al Centro Cultural Estacion Terminal Sur"
+        loading="eager"
+      />
+      @for (image of summitImages; track image.src) {
+        <img [src]="image.src" [alt]="image.alt" loading="eager" />
+      }
+    </div>
+  </section>
+
+  <section class="contact" id="contacto" aria-labelledby="contact-title">
+    <div>
+      <h2 id="contact-title">Hablemos de tu caso</h2>
+      <p>
+        Contame brevemente qué necesitás y coordinamos el próximo paso con
+        criterio, reserva y claridad.
+      </p>
+    </div>
+    <div class="contact-actions">
+      <a class="button primary" [href]="whatsappUrl" target="_blank" rel="noopener">
+        Consultar por WhatsApp
+      </a>
+      <a [href]="instagramUrl" target="_blank" rel="noopener">@legalcloser</a>
+      <a [href]="linkedinUrl" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </section>
+</main>
