@@ -14,7 +14,7 @@ Proyecto Angular 21 con SSR servido por Express.
 
 ```bash
 npm ci
-npm run build
+npm run build:ssr
 node dist/leonela-cabello/server/server.mjs
 ```
 
