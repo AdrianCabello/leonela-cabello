@@ -18,8 +18,8 @@ type SummitImage = {
   styleUrl: './app.scss',
 })
 export class App {
-  protected readonly whatsappUrl = 'https://wa.me/message/EANVLTVFIU6PK1';
-  protected readonly calendlyUrl = 'https://calendly.com/legalcloser/consulta';
+  protected readonly whatsappUrl = 'https://wa.me/5492262617014';
+  protected readonly calendlyUrl = 'https://calendly.com/cabelloleonela';
   protected readonly instagramUrl = 'https://www.instagram.com/legalcloser/';
   protected readonly linkedinUrl = 'https://www.linkedin.com/in/leonela-cabello/';
 
